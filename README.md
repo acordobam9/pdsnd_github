@@ -7,7 +7,7 @@ Final Project - git commands doc
 This project contains the Python script for the Bikeshare data analysis project and tests the git Source Version Control
 
 ### Files used
-ACM Final Project Bikes Share v3.py 
+ACM Final Project Bikes Share v3.py
 
 csv files: chicago.csv new_york_city.csv washington.csv
 
@@ -15,3 +15,5 @@ csv files: chicago.csv new_york_city.csv washington.csv
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
 #To Udacity and Gitbash
+
+## Change # 1 git command
