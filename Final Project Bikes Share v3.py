@@ -34,7 +34,7 @@ def get_filters():
     days = ["all","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
     day = input_data("Enter your day of week (all, monday, tuesday, ... sunday): ", "Error, invalid day", days)
     print('-'*40)
-    return city, month, day 
+    return city, month, day
 
 
 def load_data(city, month, day):
@@ -52,7 +52,7 @@ def load_data(city, month, day):
     labels = []
 
     for column_name in df.columns:
-        new_col = column_name.replace(' ', '').lower() 
+        new_col = column_name.replace(' ', '').lower()
         labels.append(new_col)
     df.columns = labels
     months = {"january":1,"february":2,"march":3,"april":4,"may":5,"june":6}
@@ -99,11 +99,11 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
     try:
-        
-        print("Most commonly used start station " + df['startstation'].mode().to_string(index = False)) 
-        print("Most commonly used end station " + df['endstation'].mode().to_string(index = False)) 
+
+        print("Most commonly used start station " + df['startstation'].mode().to_string(index = False))
+        print("Most commonly used end station " + df['endstation'].mode().to_string(index = False))
         df['trip'] = df['startstation'].str.cat(df['endstation'], sep=' -> ')
-        print("Most frequent combination of start station and end station trip " + df['trip'].mode().to_string(index = False)) 
+        print("Most frequent combination of start station and end station trip " + df['trip'].mode().to_string(index = False))
     except:
         print("Nothing found!")
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -117,7 +117,7 @@ def trip_duration_stats(df):
     start_time = time.time()
     try:
         print("Total travel time " + str(datetime.timedelta(seconds=int(df['tripduration'].sum()))))
-        print("Mean travel time " + str(datetime.timedelta(seconds=int(df['tripduration'].mean())))) 
+        print("Mean travel time " + str(datetime.timedelta(seconds=int(df['tripduration'].mean()))))
     except:
         print("Nothing found!")
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -130,9 +130,9 @@ def user_stats(df):
     start_time = time.time()
     try:
         print("Count user type = Suscriber " + str(df.query('usertype == "Subscriber"').usertype.count()))
-        print("Count user type = Customer " + str(df.query('usertype == "Customer"').usertype.count()))        
-        print("Count user gender = Male " + str(df.query('gender == "Male"').gender.count())) 
-        print("Count user gender = Female " + str(df.query('gender == "Female"').gender.count())) 
+        print("Count user type = Customer " + str(df.query('usertype == "Customer"').usertype.count()))
+        print("Count user gender = Male " + str(df.query('gender == "Male"').gender.count()))
+        print("Count user gender = Female " + str(df.query('gender == "Female"').gender.count()))
         print("Earliest year of birth " + str(int(df['birthyear'].min())))
         print("Most recent year of birth " + str(int(df['birthyear'].max())))
         print("Most common year of birth " + str(df['birthyear'].mode().to_string(index = False)))
@@ -146,19 +146,19 @@ def raw_data_user_stats(df):
     counter2=5
     answer = input('Would you like to see 5 lines of raw data? Enter yes or no: ').lower()
     while True:
-        
+
         if answer == 'yes':
             print(df.iloc[counter1:counter2])
             counter1+=5
             counter2+=5
-            answer = input('Would you like to see 5 more lines of raw data? Enter yes or no: ').lower()         
-        if answer == 'no':    
+            answer = input('Would you like to see 5 more lines of raw data? Enter yes or no: ').lower()
+        if answer == 'no':
             break
         else if answer not in ['yes','no']:
             answer = input ('input invalid, please enter yes or no')
 def main():
     while True:
-        
+
         city, month, day = get_filters()
         df = load_data(city, month, day)
         time_stats(df)
@@ -173,3 +173,9 @@ def main():
             break
 if __name__ == "__main__":
     main()
+
+
+
+
+## Chane # 1 Git commands
+## Change #2 Git Commands
